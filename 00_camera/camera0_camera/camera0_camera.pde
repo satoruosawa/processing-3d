@@ -65,8 +65,19 @@ void draw() {
       camera(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, 0, 1, 0);
     }
     translate(width / 2, height / 2);
+    stroke(0);
     box(50);
+    drawAxis();
   } popMatrix();
+}
+
+void drawAxis() {
+  stroke(255, 0, 0);
+  line(0, 0, 0, 100, 0, 0);
+  stroke(0, 255, 0);
+  line(0, 0, 0, 0, 100, 0);
+  stroke(0, 0, 255);
+  line(0, 0, 0, 0, 0, 100);
 }
 
 void keyPressed() {
