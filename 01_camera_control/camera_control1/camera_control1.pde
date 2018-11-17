@@ -22,8 +22,10 @@ void cameraControl() {
     translate(0, 0, cameraZ);
   } endCamera();
   translate(width / 2, height / 2, width / 2);
-  rotateX(mouseY / float(width) * TWO_PI);
-  rotateY(mouseX / float(height) * TWO_PI);
+  float mappedMouseX = map(mouseX, 0, width, -1.0, 1.0);
+  float mappedMouseY = map(mouseY, 0, width, -1.0, 1.0);
+  rotateX(-mappedMouseY * PI);
+  rotateY(mappedMouseX * PI);
   translate(-width / 2, -height / 2, -width / 2);
 }
 
